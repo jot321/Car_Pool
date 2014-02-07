@@ -15,9 +15,11 @@
 	$pass1 = $_POST['pass1'];
 	$pass2 = $_POST['pass2'];
 
+	echo "<h3>Wow</h3>";
 
 	mysql_query("INSERT INTO 11CS10059.Person (`Name`, `Email`, `Address`, `Id`, `Password`, `Mobile`) VALUES ('".$name."','".$email."','".$add."','".$id."','".$pass1."','".$mob."')");
-	header('Location: index_reg.php');
+	// header('Location: index_reg.php');
+	include("index_reg.php");
 
 
 ?>

@@ -148,6 +148,7 @@ table td.active
 		<button type="submit" class="btn btn-default">Register</button>
 		</form>
 
+
 </p>
 </section>
 

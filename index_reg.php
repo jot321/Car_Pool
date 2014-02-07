@@ -148,10 +148,6 @@ table td.active
 		<button type="submit" class="btn btn-default">Register</button>
 		</form>
 
-		<?php
-			include('get_id.php');
-		?>
-
 </p>
 </section>
 

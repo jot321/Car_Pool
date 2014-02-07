@@ -141,10 +141,6 @@ table td.active
 		
 		<?php 
 		
-
-
-
-		do_table("b");
 		
 		?>	
 
@@ -165,12 +161,6 @@ table td.active
 
 	<table id="superv" width="40%" align="middle" class="result"><tbody><tr><td >Day</td><td>Meal 1</td><td>Meal 2</td><td>Meal 3</td><td>Meal 4</td></tr></tbody><tbody>
 
-		<?php 
-		
-		
-		do_table("l");
-		
-		?>
 
 
 	</tbody></table>
@@ -199,13 +189,6 @@ table td.active
 		
 		<table id="researchtb" width="40%" align="middle" class="result"><tbody><tr><td >Day</td><td>Meal 1</td><td>Meal 2</td><td>Meal 3</td><td>Meal 4</td></tr></tbody><tbody>
 
-			<?php 
-
-
-			do_table("s");
-
-			?>
-
 
 		</tbody></table>
 
@@ -228,12 +211,6 @@ table td.active
 
 <p id="li_4"><table id="admintb" width="40%" align="middle" class="result"><tbody><tr><td >Day</td><td>Meal 1</td><td>Meal 2</td><td>Meal 3</td><td>Meal 4</td></tr></tbody><tbody>
 
-	<?php 
-
-
-	do_table("d");
-
-	?>
 
 
 </tbody></table>

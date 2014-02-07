@@ -4,10 +4,10 @@
  */
 
 // DATABASE: Connection variables
-$db_host		= "127.0.0.1";
-$db_name		= "Car_Pool";
-$db_username	= "root";
-$db_password	= "jot";
+$db_host		= "10.5.18.71";
+$db_name		= "11CS10059";
+$db_username	= "11CS10059";
+$db_password	= "jotjot";
 
 
 

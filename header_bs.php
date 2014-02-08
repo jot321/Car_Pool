@@ -1,6 +1,6 @@
 <head>
 	<meta charset="utf-8">
-	<title>Carpool</title>
+	<title>Carpool System</title>
 
 	<!-- Le styles -->
 	<link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -62,8 +62,6 @@ table
 
 	
 		<title>Your Calculated WeWaIC Index</title>
-	<!-- 	<script type="text/javascript" src="js/jquery.js"></script>
-		<script type="text/javascript" src="js/jsapi.js"></script> -->
 		<link rel="stylesheet" href="css/jquery-ui.css" />
 
 
@@ -92,13 +90,16 @@ table
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		  </button>
-<!-- 		  <a class="brand" href="./index.html">FCSIT</a>
- -->		  
- 
+
  		<div class="nav-collapse collapse" id="top_main_nav">
 			<ul class="nav">
 			  <li id="li_v">
-				<a href="./index.php">My Mess Options</a>
+				<!--<a href="./index.php">My Mess Options</a>
+					
+					here i can add some options if needed
+					
+				-->
+
 			  </li>
 
 
@@ -133,51 +134,5 @@ table
 
 	  </div>
 	</header>
-	
-	
-	<!-- 
-	<a href="#myModal" role="button" class="btn" data-toggle="modal" id="loginmodaltog" style="display:none">Launch demo modal</a>
-	
-	<div id="myModal" style="" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	  <div class="modal-header">
-		<h3 id="myModalLabel">Login to your Account</h3>
-	  </div>
-	  <div class="modal-body">
-		
-		
-		<form class="form-horizontal" style="margin-top:30px">
-		<fieldset>
-		
-
-		
-		<div class="control-group" style=""> 
-		  <label class="control-label" for="login_sid">Roll No : </label>
-		  <div class="controls">
-			<input id="login_sid" name="login_sid" type="text" placeholder="Enter your ID" class="input-medium" required="" style="" onKeyPress="submitenter(this,event)">
-		
-		  </div>
-		</div>
-		
-		<div class="control-group">
-		  <label class="control-label" for="login_pass">Password : </label>
-		  <div class="controls">
-			<input id="login_pass" name="login_pass" type="password" placeholder="Enter your Password" class="input-medium" required="" onKeyPress="submitenter(this,event)">
-		
-		  </div>
-		</div>
-		
-		</fieldset>
-		</form>
-
-
-
-	  </div>
-	  <div class="modal-footer">
-		  <div class="alert alert-info" style="position : absolute">
-		   Best viewed in Google Chrome
-		  </div>
-		<button class="btn btn-primary" onclick="on_login_click()">Login</button>
-	  </div>
-	</div> -->
 
 

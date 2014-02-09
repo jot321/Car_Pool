@@ -18,7 +18,7 @@
 	echo "<h3>Wow</h3>";
 
 	mysql_query("INSERT INTO 11CS10059.Person (`Name`, `Email`, `Address`, `Id`, `Password`, `Mobile`) VALUES ('".$name."','".$email."','".$add."','".$id."','".$pass1."','".$mob."')");
-	// header('Location: index_reg.php');
+	header('Location: /dbms/Car_Pool/#login_op');
 	include("index_reg.php");
 
 

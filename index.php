@@ -53,7 +53,7 @@ table td.active
     <div class="row">
       
       
-      <div class="span3 bs-docs-sidebar " id="nav_menu">
+      <div class="span3" id="nav_menu">
 	<ul class="nav nav-list bs-docs-sidenav affix-top" >
 	  
 	  <li style="margin-bottom:20px">
@@ -88,6 +88,17 @@ table td.active
 	</ul>
       </div>
       <div class="teachForm  span9 " id="resultview">
+
+	<section id="login_op">
+	  <form action = "login.php" method="post">
+	    <h2 class="description" for="element_1">Login</h2><p id="li_1">
+	      <table  id="courses" width="90%" align="middle" class="result"><tbody>
+		  <tr><td> Email: </td>  <td> <input type="text" name="email"></td></tr>
+		  <tr><td> Password: </td>  <td> <input type="password" name="pass1"></td></tr>
+	      </table>
+	      <button type="submit" class="btn btn-default">Login</button>
+	  <form>
+	</section>
 
 	<section id="registeruser_op">
 	  <form action = "registration.php" method = "post">
@@ -201,14 +212,33 @@ table td.active
   <!--udit--> 
   <script>
     function hideall(){
-    $("#registeruser_op").fadeOut(50);
-    }
+    $("#huha1").removeClass("active");
+    $("#huha2").removeClass("active");
+    $("#registeruser_op").hide();
+    $("#login_op").hide();
+   }
 
     $(document).ready(function(){
+
+    hideall();
+    var check_var = document.URL;
+    var check_var_array = check_var.split('/');
+    if(check_var_array[5]=="")
+       alert("huha");
 
     $("#huha2").click(function(){
     hideall();
     $("#registeruser_op").fadeIn();
+    $("#huha2").addClass("active");
+    window.location = "#registeruser_op";
+document.location.href="#bra";
+    });
+
+    $("#huha1").click(function(){
+    hideall();
+    $("#login_op").fadeIn();
+    $("#huha1").addClass("active");
+    window.location = "#login_op";
     });
 
     });

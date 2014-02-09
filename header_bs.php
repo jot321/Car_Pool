@@ -1,3 +1,5 @@
+
+
 <head>
 	<meta charset="utf-8">
 	<title>Carpool System</title>
@@ -99,7 +101,12 @@ table
 					here i can add some options if needed
 					
 				-->
-
+				<?php  
+					if(isset($_SESSION['Name'])) 
+						echo "<a>Hi, ".$_SESSION['Name']."</a>";
+					else 
+						 echo "<a>No login</a>";
+				?>
 			  </li>
 
 

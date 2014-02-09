@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE HTML>
 <html lang="en">
   <link rel="stylesheet" type="text/css" href="css/calc_edit_final.css" media="all">
@@ -44,7 +48,48 @@ table td.active
     
     }
   </style>
-  
+  <script>
+    function validateForm1()
+    {
+    var flag=0;
+    var temp = document.forms["form1"];
+    if(temp["name"].value==null){
+    alert("Please enter valid name");
+    return false;
+    }
+    if(temp["email"].value==null){
+    alert("Please enter valid email");
+    return false;
+    }
+    if(temp["add"].value==null){
+    alert("Please enter valid address");
+    return false;
+    }
+    if(temp["phone"].value==null){
+    alert("Please enter valid phone number");
+    return false;
+    }
+    if(temp["pass1"].value==null){
+    alert("Please enter valid password");
+    return false;
+    }
+    if(temp["pass1"].value!=temp["pass2"].value){
+    alert("Passwords don't match");
+    return false;
+    }
+    }
+    function validateForm2(){
+    var temp = document.forms["form2"];
+    if(temp["email"].value==null){
+    alert("Please enter valid email");
+    return false;
+    }
+    if(temp["pass1"].value==null){
+    alert("Please enter valid password");
+    return false;
+    }
+    }
+  </script>  
   
   <?php require('header_bs.php'); ?>
   
@@ -78,7 +123,9 @@ table td.active
 	      </b>
 	    </div>
 	  </li>
-	  <li onclick="" id="huha1"><a href="#login_op"><i class="icon-chevron-right"></i>Login</a></li>
+	  <li onclick="" id="huha1"><a href="#login_op"><i class="icon-chevron-right"></i><?php  
+					if(isset($_SESSION['Name'])) echo "Logout";
+					else echo "Login";?></a></li>
 	  <li onclick="" id="huha2"><a href="#registeruser_op"><i class="icon-chevron-right"></i>User Register</a></li>
 	  <li onclick=""><a href="#teaching"><i class="icon-chevron-right" ></i>Vehicle Registeration</a></li>
 	  <li onclick=""><a href="#supervision"><i class="icon-chevron-right"></i>Add a Sharing</a></li>
@@ -90,18 +137,24 @@ table td.active
       <div class="teachForm  span9 " id="resultview">
 
 	<section id="login_op">
-	  <form action = "login.php" method="post">
+	  <form action = "login.php" method="post" name="form2" onsubmit="return validateForm2()">
+		<?php if (isset($_SESSION['Name'])) echo '<h2 class="description" for="element_1">Logout</h2><p id="li_1"><br/>
+							<p>Are you sure you want to log out?</p>
+							<button type="submit" class="btn btn-default">Logout</button>';
+		else echo '
+
 	    <h2 class="description" for="element_1">Login</h2><p id="li_1">
 	      <table  id="courses" width="90%" align="middle" class="result"><tbody>
 		  <tr><td> Email: </td>  <td> <input type="text" name="email"></td></tr>
 		  <tr><td> Password: </td>  <td> <input type="password" name="pass1"></td></tr>
 	      </table>
-	      <button type="submit" class="btn btn-default">Login</button>
-	  <form>
+	      <button type="submit" class="btn btn-default">Login</button>';
+		?>
+	  </form>
 	</section>
 
 	<section id="registeruser_op">
-	  <form action = "registration.php" method = "post">
+	  <form action = "registration.php" method = "post" onsubmit="return validateForm1()" name="form1">
 	    <h2 class="description" for="element_1">New Registration</h2><p id="li_1">
 	      <table  id="courses" width="90%" align="middle" class="result"><tbody>
 		  
@@ -223,15 +276,14 @@ table td.active
     hideall();
     var check_var = document.URL;
     var check_var_array = check_var.split('/');
-    if(check_var_array[5]=="")
-       alert("huha");
+//    if(check_var_array[5]=="")
+//       alert("huha");
 
     $("#huha2").click(function(){
     hideall();
     $("#registeruser_op").fadeIn();
     $("#huha2").addClass("active");
     window.location = "#registeruser_op";
-document.location.href="#bra";
     });
 
     $("#huha1").click(function(){

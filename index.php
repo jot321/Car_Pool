@@ -126,7 +126,8 @@ table td.active
 	  <li onclick="" id="huha1"><a href="#login_op"><i class="icon-chevron-right"></i><?php  
 					if(isset($_SESSION['Name'])) echo "Logout";
 					else echo "Login";?></a></li>
-	  <li onclick="" id="huha2"><a href="#registeruser_op"><i class="icon-chevron-right"></i>User Register</a></li>
+<?php if(!isset($_SESSION['Name'])) echo '
+  <li onclick="" id="huha2"><a href="#registeruser_op"><i class="icon-chevron-right"></i>User Register</a></li>';?>
 	  <li onclick=""><a href="#teaching"><i class="icon-chevron-right" ></i>Vehicle Registeration</a></li>
 	  <li onclick=""><a href="#supervision"><i class="icon-chevron-right"></i>Add a Sharing</a></li>
 	  <li onclick=""><a href="#research"><i class="icon-chevron-right"></i>Find a Sharing</a></li>

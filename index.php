@@ -123,17 +123,17 @@ table td.active
 	      </b>
 	    </div>
 	  </li>
-	  <li onclick="" id="huha1"><a href="#login_op"><i class="icon-chevron-right"></i><?php  
+	   <li onclick="" id="huha1"><a href="#login_op"><i class="icon-chevron-right"></i><?php  
 					if(isset($_SESSION['Name'])) echo "Logout";
 					else echo "Login";?></a></li>
 <?php if(!isset($_SESSION['Name'])) echo '
-  <li onclick="" id="huha2"><a href="#registeruser_op"><i class="icon-chevron-right"></i>User Register</a></li>';?>
-	  <li onclick=""><a href="#teaching"><i class="icon-chevron-right" ></i>Vehicle Registeration</a></li>
-	  <li onclick=""><a href="#supervision"><i class="icon-chevron-right"></i>Add a Sharing</a></li>
-	  <li onclick=""><a href="#research"><i class="icon-chevron-right"></i>Find a Sharing</a></li>
-	  <li onclick=""><a href="#admin"><i class="icon-chevron-right"></i>Post an open message</a></li>
+      	<li onclick="" id="huha2"><a href="#registeruser_op"><i class="icon-chevron-right"></i>User Register</a></li>';?>
+      	 <li onclick="" id="huha3"><a href="#veh_reg_op"><i class="icon-chevron-right" ></i>Vehicle Registeration</a></li>
+       	 <li onclick=""><a href="#supervision"><i class="icon-chevron-right"></i>Add a Sharing</a></li>
+       	 <li onclick=""><a href="#research"><i class="icon-chevron-right"></i>Find a Sharing</a></li>
+       	 <li onclick=""><a href="#admin"><i class="icon-chevron-right"></i>Post an open message</a></li>
 
-	</ul>
+       	</ul>
       </div>
       <div class="teachForm  span9 " id="resultview">
 
@@ -169,6 +169,14 @@ table td.active
 	      <button type="submit" class="btn btn-default">Register</button>
 	  </form>	  
 	</section>
+
+	<section id="veh_reg_op">
+		<?php 
+			include 'veh_reg_op.php';
+		?>
+	</section>
+	
+
 
 <!--	
       <section id="teaching">
@@ -268,8 +276,10 @@ table td.active
     function hideall(){
     $("#huha1").removeClass("active");
     $("#huha2").removeClass("active");
+    $("#huha3").removeClass("active");
     $("#registeruser_op").hide();
     $("#login_op").hide();
+    $("#veh_reg_op").hide();
    }
 
     $(document).ready(function(){
@@ -292,6 +302,13 @@ table td.active
     $("#login_op").fadeIn();
     $("#huha1").addClass("active");
     window.location = "#login_op";
+    });
+
+    $("#huha3").click(function(){
+    hideall();
+    $("#veh_reg_op").fadeIn();
+    $("#huha3").addClass("active");
+    window.location = "#veh_reg_op";
     });
 
     });

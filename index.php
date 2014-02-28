@@ -401,8 +401,9 @@ table td.active
 	
 	<br>
 	Created by : 
-	<a href="#roh_modal" role="button" class="" data-toggle="modal"><b>Udit Bhutani : yudi.feb1@gmail.com</a><br>
 	<a href="#jot_modal" role="button" class="" data-toggle="modal"><b>Jot Sarup : sarup.jot@gmail.com</a></b>
+  <a href="#roh_modal" role="button" class="" data-toggle="modal"><b>Udit Bhutani : yudi.feb1@gmail.com</a><br>
+  
 	
       </p>
     </div>

@@ -5,20 +5,17 @@
 	// ini_set('display_errors', 'On');
 	error_reporting(E_ALL);	
 
-	include('index.php');
 
-	$source = $_POST['option1_1'];
-	$dest = $_POST['option1_2'];
+	$source = $_POST['source'];
+	$dest = $_POST['dest'];
 
 	$query = "SELECT * FROM 11CS10059.Sharing WHERE `source` = '".$source."' and `dest`= '".$dest."'";
 
 	$result = mysql_query($query);
 
-	echo "jot";
+	while($row = mysql_fetch_array($result)){
 
-	// while($row = mysql_fetch_array($result)){
-
-
-	// }
+		echo $row[Id];
+	}
 
 ?>

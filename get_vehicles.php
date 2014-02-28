@@ -34,6 +34,8 @@
 			<input type = "text" name = "dest" placeholder = "Destination:"></input><br>
 			<input type = "text" name = "start" placeholder = "Start Time:"></input><br>
 			<input type = "text" name = "arrival" placeholder = "Arrival Time:"></input><br>
+			<input type = "text" name = "date" placeholder = "Date of Travel:"></input><br>
+
 			';
 	echo '<button type="submit" class="btn btn-default">Go</button>';
 	echo '</form>';

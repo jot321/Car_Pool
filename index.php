@@ -191,7 +191,7 @@ table td.active
   </section>
 
   <section id="find_sharing">
-    <?php include 'get_vehicles.php'; ?>
+    <?php include 'find_sharing.php'; ?>
   </section>
 
   <section id="check_status_sharing">

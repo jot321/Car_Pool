@@ -96,11 +96,6 @@ table
  		<div class="nav-collapse collapse" id="top_main_nav">
 			<ul class="nav">
 			  <li id="li_v">
-				<!--<a href="./index.php">My Mess Options</a>
-					
-					here i can add some options if needed
-					
-				-->
 				<?php  
 					if(isset($_SESSION['Name'])) 
 						echo "<a>Hi, ".$_SESSION['Name']."</a>";

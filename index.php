@@ -51,43 +51,48 @@ table td.active
   <script>
     function validateForm1()
     {
-    var flag=0;
-    var temp = document.forms["form1"];
-    if(temp["name"].value==null){
-    alert("Please enter valid name");
-    return false;
-    }
-    if(temp["email"].value==null){
-    alert("Please enter valid email");
-    return false;
-    }
-    if(temp["add"].value==null){
-    alert("Please enter valid address");
-    return false;
-    }
-    if(temp["phone"].value==null){
-    alert("Please enter valid phone number");
-    return false;
-    }
-    if(temp["pass1"].value==null){
-    alert("Please enter valid password");
-    return false;
-    }
-    if(temp["pass1"].value!=temp["pass2"].value){
-    alert("Passwords don't match");
-    return false;
-    }
+      var flag=0;
+      var temp = document.forms["form1"];
+
+      if(!temp["name"].value){
+        alert("Name not Entered");
+        return false;
+      }
+      if(!temp["email"].value){
+        alert("Email not Entered");
+        return false;
+      }
+      if(!temp["add"].value){
+        alert("Address not Entered");
+        return false;
+      }
+      if(!temp["phone"].value){
+        alert("Phone No. not Entered");
+        return false;
+      }
+      if(!temp["pass1"].value){
+        alert("Password not Entered");
+        return false;
+      }
+      if(!temp["pass2"].value){
+        alert("Password not Entered");
+        return false;
+      }      
+      if(temp["pass1"].value!=temp["pass2"].value){
+        alert("Passwords don't match");
+        return false;
+      }
     }
     function validateForm2(){
-    var temp = document.forms["form2"];
-    if(temp["email"].value==null){
-    alert("Please enter valid email");
-    return false;
-    }
-    if(temp["pass1"].value==null){
-    alert("Please enter valid password");
-    return false;
-    }
+      var temp = document.forms["form2"];
+      if(!temp["email"].value){
+        alert("Please enter valid email");
+        return false;
+      }
+      if(!temp["pass1"].value){
+        alert("Please enter valid password");
+        return false;
+      }
     }
   </script>  
   
@@ -123,11 +128,16 @@ table td.active
 	      </b>
 	    </div>
 	  </li>
-	   <li onclick="" id="huha1"><a href="#login_op"><i class="icon-chevron-right"></i><?php  
-					if(isset($_SESSION['Name'])) echo "Logout";
-					else echo "Login";?></a></li>
-<?php if(!isset($_SESSION['Name'])) echo '
-      	<li onclick="" id="huha2"><a href="#registeruser_op"><i class="icon-chevron-right"></i>User Register</a></li>';?>
+	   <li onclick="" id="huha1"><a href="#login_op"><i class="icon-chevron-right"></i>
+        <?php  
+					if(isset($_SESSION['Name']))
+            echo "Logout";
+					else echo "Login";?>
+        </a></li>
+
+        <?php if(!isset($_SESSION['Name'])) echo '
+      	   <li onclick="" id="huha2"><a href="#registeruser_op"><i class="icon-chevron-right"></i>User Register</a></li>';
+        ?>
       	 <li onclick="" id="huha3"><a href="#veh_reg_op"><i class="icon-chevron-right" ></i>Vehicle Registeration</a></li>
        	 <li onclick=""><a href="#supervision"><i class="icon-chevron-right"></i>Add a Sharing</a></li>
        	 <li onclick=""><a href="#research"><i class="icon-chevron-right"></i>Find a Sharing</a></li>
@@ -139,6 +149,7 @@ table td.active
 
 	<section id="login_op">
 	  <form action = "login.php" method="post" name="form2" onsubmit="return validateForm2()">
+
 		<?php if (isset($_SESSION['Name'])) echo '<h2 class="description" for="element_1">Logout</h2><p id="li_1"><br/>
 							<p>Are you sure you want to log out?</p>
 							<button type="submit" class="btn btn-default">Logout</button>';

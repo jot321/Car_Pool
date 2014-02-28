@@ -139,7 +139,7 @@ table td.active
       	   <li onclick="" id="huha2"><a href="#registeruser_op"><i class="icon-chevron-right"></i>User Register</a></li>';
         ?>
       	 <li onclick="" id="huha3"><a href="#veh_reg_op"><i class="icon-chevron-right" ></i>Vehicle Registeration</a></li>
-       	 <li onclick=""><a href="#supervision"><i class="icon-chevron-right"></i>Add a Sharing</a></li>
+       	 <li onclick="#add_sharing"><a href="#add_sharing"><i class="icon-chevron-right"></i>Add a Sharing</a></li>
        	 <li onclick=""><a href="#research"><i class="icon-chevron-right"></i>Find a Sharing</a></li>
        	 <li onclick=""><a href="#admin"><i class="icon-chevron-right"></i>Post an open message</a></li>
 
@@ -187,6 +187,11 @@ table td.active
 		?>
 	</section>
 	
+  <section id="add_sharing">
+    <?php 
+      include 'get_vehicles.php';
+    ?>
+  </section>
 
 
 <!--	

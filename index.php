@@ -138,10 +138,18 @@ table td.active
         <?php if(!isset($_SESSION['Name'])) echo '
       	   <li onclick="" id="huha2"><a href="#registeruser_op"><i class="icon-chevron-right"></i>User Register</a></li>';
         ?>
-      	 <li onclick="" id="huha3"><a href="#veh_reg_op"><i class="icon-chevron-right" ></i>Vehicle Registeration</a></li>
-       	 <li onclick="#add_sharing"><a href="#add_sharing"><i class="icon-chevron-right"></i>Add a Sharing</a></li>
-       	 <li onclick=""><a href="#research"><i class="icon-chevron-right"></i>Find a Sharing</a></li>
-       	 <li onclick=""><a href="#admin"><i class="icon-chevron-right"></i>Post an open message</a></li>
+        <?php if(isset($_SESSION['Name'])) echo '
+      	   <li onclick="" id="huha3"><a href="#veh_reg_op"><i class="icon-chevron-right" ></i>Vehicle Registeration</a></li>';
+         ?>
+         <?php if(isset($_SESSION['Name'])) echo '
+       	 <li onclick="" id="huha4"><a href="#add_sharing"><i class="icon-chevron-right"></i>Add a Sharing</a></li>';
+         ?>
+         <?php if(isset($_SESSION['Name'])) echo '
+       	 <li onclick=""><a href="#research"><i class="icon-chevron-right"></i>Find a Sharing</a></li>';
+         ?>
+         <?php if(isset($_SESSION['Name'])) echo '
+       	 <li onclick=""><a href="#admin"><i class="icon-chevron-right"></i>Post an open message</a></li>';
+         ?>
 
        	</ul>
       </div>
@@ -166,19 +174,7 @@ table td.active
 	</section>
 
 	<section id="registeruser_op">
-	  <form action = "registration.php" method = "post" onsubmit="return validateForm1()" name="form1">
-	    <h2 class="description" for="element_1">New Registration</h2><p id="li_1">
-	      <table  id="courses" width="90%" align="middle" class="result"><tbody>
-		  
-		  <tr><td> Name: </td>  <td> <input type="text" name="name"></td></tr> 
-		  <tr><td> Email: </td>  <td> <input type="text" name="email"></td></tr>
-		  <tr><td> Address: </td>  <td> <input type="text" name="add"></td></tr>
-		  <tr><td> Phone No: </td>  <td> <input type="text" name="phone"></td></tr>
-		  <tr><td> Password: </td>  <td> <input type="password" name="pass1"></td></tr>
-		  <tr><td> Confirm Password: </td>  <td> <input type="password" name="pass2"></td></tr>
-	      </table>
-	      <button type="submit" class="btn btn-default">Register</button>
-	  </form>	  
+	 <?php include('test.php');?>	  
 	</section>
 
 	<section id="veh_reg_op">
@@ -188,9 +184,7 @@ table td.active
 	</section>
 	
   <section id="add_sharing">
-    <?php 
-      include 'get_vehicles.php';
-    ?>
+    <?php include 'get_vehicles.php'; ?>
   </section>
 
 
@@ -293,9 +287,13 @@ table td.active
     $("#huha1").removeClass("active");
     $("#huha2").removeClass("active");
     $("#huha3").removeClass("active");
+    $("#huha4").removeClass("active");
+
     $("#registeruser_op").hide();
     $("#login_op").hide();
     $("#veh_reg_op").hide();
+    $("#add_sharing").hide();
+
    }
 
     $(document).ready(function(){
@@ -325,6 +323,13 @@ table td.active
     $("#veh_reg_op").fadeIn();
     $("#huha3").addClass("active");
     window.location = "#veh_reg_op";
+    });
+
+    $("#huha4").click(function(){
+    hideall();
+    $("#add_sharing").fadeIn();
+    $("#huha4").addClass("active");
+    window.location = "#add_sharing";
     });
 
     });

@@ -145,7 +145,10 @@ table td.active
        	 <li onclick="" id="huha4"><a href="#add_sharing"><i class="icon-chevron-right"></i>Add a Sharing</a></li>';
          ?>
          <?php if(isset($_SESSION['Name'])) echo '
-       	 <li onclick=""><a href="#research"><i class="icon-chevron-right"></i>Find a Sharing</a></li>';
+       	 <li onclick="" id = "huha5"><a href="#find_sharing"><i class="icon-chevron-right"></i>Find a Sharing</a></li>';
+         ?>
+         <?php if(isset($_SESSION['Name'])) echo '
+         <li onclick="" id = "huha6"><a href="#check_status_sharing"><i class="icon-chevron-right"></i>Check Sharing Status</a></li>';
          ?>
          <?php if(isset($_SESSION['Name'])) echo '
        	 <li onclick=""><a href="#admin"><i class="icon-chevron-right"></i>Post an open message</a></li>';
@@ -187,6 +190,13 @@ table td.active
     <?php include 'get_vehicles.php'; ?>
   </section>
 
+  <section id="find_sharing">
+    <?php include 'get_vehicles.php'; ?>
+  </section>
+
+  <section id="check_status_sharing">
+    <?php include 'check_status_sharing.php';?>
+  </section>
 
 <!--	
       <section id="teaching">
@@ -288,11 +298,14 @@ table td.active
     $("#huha2").removeClass("active");
     $("#huha3").removeClass("active");
     $("#huha4").removeClass("active");
+    $("#huha5").removeClass("active");
+
 
     $("#registeruser_op").hide();
     $("#login_op").hide();
     $("#veh_reg_op").hide();
     $("#add_sharing").hide();
+    $("#find_sharing").hide();
 
    }
 
@@ -330,6 +343,13 @@ table td.active
     $("#add_sharing").fadeIn();
     $("#huha4").addClass("active");
     window.location = "#add_sharing";
+    });
+
+    $("#huha5").click(function(){
+    hideall();
+    $("#find_sharing").fadeIn();
+    $("#huha5").addClass("active");
+    window.location = "#find_sharing";
     });
 
     });

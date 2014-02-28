@@ -7,9 +7,6 @@
 	include('mysqlconnect.php');
 	include('get_vehicle_id.php');
 
-	echo $_SESSION['Id'];
-
-	$num = 6;
 	$next = $v_id +1;
 	mysql_query("UPDATE 11CS10059.Global_Var SET Vehicle_Id =".$next);
 

@@ -30,9 +30,11 @@
 
 	echo '<h3>Find a Sharing </h3>';
 	echo '<form action = "find_vehicle_option1.php" method = "post" name="form1">
-			  <input type = "text" name = "option1_1" id = "option1_1" placeholder = "Source"> </input>
-			  <input type = "text" name = "option1_2" id = "option1_2" placeholder = "Destination"> </input><br>
-			  <input type="button" value="Go" id="click"></input>
+			  <table  id="courses" width="90%" align="middle" class="result table-striped">
+			  <tr>
+			  <td><input type = "text" name = "option1_1" id = "option1_1" placeholder = "Source"> </input></td>
+			  <td><input type = "text" name = "option1_2" id = "option1_2" placeholder = "Destination"> </input></td>
+			  <td><input type="button" value="Go" id="click" class="btn btn-default"></input></td></tr></table>
 		  </form>
 		  ';
 

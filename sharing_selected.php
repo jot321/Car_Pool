@@ -28,4 +28,6 @@
 
 	$query_3 = "INSERT INTO `11CS10059`.`Notification` (`Owner_Id`, `Requester_Id`, `no_of_passengers`) VALUES ('".$owner."', '".$_SESSION['Id']."', '".$num."')";
 	mysql_query($query_3);
+
+	header('Location: /dbms/Car_Pool/');
 ?>

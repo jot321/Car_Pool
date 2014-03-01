@@ -148,7 +148,7 @@ table td.active
        	 <li onclick="" id = "huha5"><a href="#find_sharing"><i class="icon-chevron-right"></i>Find a Sharing</a></li>';
          ?>
          <?php if(isset($_SESSION['Name'])) echo '
-         <li onclick="" id = "huha6"><a href="#check_status_sharing"><i class="icon-chevron-right"></i>Check Sharing Status</a></li>';
+         <li onclick="" id = "huha6"><a href="#pending_requests"><i class="icon-chevron-right"></i>Pending Requests</a></li>';
          ?>
          <?php if(isset($_SESSION['Name'])) echo '
        	 <li onclick=""><a href="#admin"><i class="icon-chevron-right"></i>Post an open message</a></li>';
@@ -194,67 +194,10 @@ table td.active
     <?php include 'find_sharing.php'; ?>
   </section>
 
-  <section id="check_status_sharing">
+  <section id="pending_requests">
     <?php include 'check_status_sharing.php';?>
   </section>
 
-<!--	
-      <section id="teaching">
-	
-	<h2 class="description" for="element_1">Vehicle Registration</h2><p id="li_1">
-	  
-	  <table  id="courses" width="90%" align="middle" class="result">
-	    <tbody>
-	      <tr><td >Day</td><td>Meal 1</td><td>Meal 2</td><td>Meal 3</td><td>Meal 4</td></tr>
-	    </tbody>
-	    <tbody>
-	    </tbody>
-	  </table>
-	  
-	  <br><h4 class="total text-success">TOTAL : Rs. <span id="totteach">0</span> per week <span id="perteach"></span></h4>
-	</p>
-      </section>
-      
-      <hr>
-      
-      <section id="supervision">
-	<h2 class="description" for="element_3">Lunch</h2><p id="li_2">
-	  
-	  
-	  <table id="superv" width="40%" align="middle" class="result"><tbody><tr><td >Day</td><td>Meal 1</td><td>Meal 2</td><td>Meal 3</td><td>Meal 4</td></tr></tbody><tbody>
-
-	  </tbody></table>	  
-	  <br><h4 class="total text-success">TOTAL : Rs. <span id="totsuper">0</span> per week <span id="persuper"></span></h4>
-	</p>
-
-	<hr>	
-      </section>
-      <section id="research">
-	
-	<h2 class="description" for="element_4">Snacks</h2>
-	<br>
-	<p id="li_3">
-	  
-	  <table id="researchtb" width="40%" align="middle" class="result"><tbody><tr><td >Day</td><td>Meal 1</td><td>Meal 2</td><td>Meal 3</td><td>Meal 4</td></tr></tbody><tbody>  
-	  </tbody></table>
-	  <br><h4 class="total text-success">TOTAL : Rs. <span id="totresearch">0</span> per week <span id="perresearch"></span></h4>
-	</p>
-	<hr> 
-      </section>
-      <section id="admin">
-	<h2 class="description" for="element_5">Dinner</h2>
-	<br>
-	<p id="li_4"><table id="admintb" width="40%" align="middle" class="result"><tbody><tr><td >Day</td><td>Meal 1</td><td>Meal 2</td><td>Meal 3</td><td>Meal 4</td></tr></tbody><tbody>  
-	  </tbody></table>
-	  <br><h4 class="total text-success">TOTAL : Rs. <span id="totadmin">0</span> per week <span id="peradmin"></span></h4>
-	</p>
-	<hr>
-      </section>
-      <br>
-      <div id="sumdiv">
-	<h3 class="description" style="color : red">Total Weekly Bill : Rs. <span id="totgrand"></span></h3>
-	<hr>
-      </div>-->
       <div id="chart_div" style="width: 900px; height: 400px;"></div>
       </div>
       
@@ -299,6 +242,7 @@ table td.active
     $("#huha3").removeClass("active");
     $("#huha4").removeClass("active");
     $("#huha5").removeClass("active");
+    $("#huha6").removeClass("active");
 
 
     $("#registeruser_op").hide();
@@ -306,7 +250,7 @@ table td.active
     $("#veh_reg_op").hide();
     $("#add_sharing").hide();
     $("#find_sharing").hide();
-
+    $("#pending_requests").hide();    
    }
 
     $(document).ready(function(){
@@ -350,6 +294,13 @@ table td.active
     $("#find_sharing").fadeIn();
     $("#huha5").addClass("active");
     window.location = "#find_sharing";
+    });
+
+    $("#huha6").click(function(){
+    hideall();
+    $("#pending_requests").fadeIn();
+    $("#huha6").addClass("active");
+    window.location = "#pending_requests";
     });
 
     });
@@ -403,7 +354,7 @@ table td.active
 	Created by : 
 	<a href="#jot_modal" role="button" class="" data-toggle="modal"><b>Jot Sarup : sarup.jot@gmail.com</a></b>
   <a href="#roh_modal" role="button" class="" data-toggle="modal"><b>Udit Bhutani : yudi.feb1@gmail.com</a><br>
-  
+
 	
       </p>
     </div>

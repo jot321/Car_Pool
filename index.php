@@ -148,10 +148,10 @@ table td.active
        	 <li onclick="" id = "huha5"><a href="#find_sharing"><i class="icon-chevron-right"></i>Find a Sharing</a></li>';
          ?>
          <?php if(isset($_SESSION['Name'])) echo '
-         <li onclick="" id = "huha6"><a href="#pending_requests"><i class="icon-chevron-right"></i>Pending Requests</a></li>';
+         <li onclick="" id = "huha6"><a href="#pending_requests_owner"><i class="icon-chevron-right"></i>Pending Requests (Owner) </a></li>';
          ?>
          <?php if(isset($_SESSION['Name'])) echo '
-       	 <li onclick=""><a href="#admin"><i class="icon-chevron-right"></i>Post an open message</a></li>';
+         <li onclick="" id = "huha7"><a href="#pending_requests_requester"><i class="icon-chevron-right"></i>Pending Requests (Requests) </a></li>';
          ?>
 
        	</ul>
@@ -194,9 +194,14 @@ table td.active
     <?php include 'find_sharing.php'; ?>
   </section>
 
-  <section id="pending_requests">
+  <section id="pending_requests_owner">
     <?php include 'check_status_sharing.php';?>
   </section>
+
+  <section id="pending_requests_requester">
+    <?php include 'check_status_sharing_requester.php';?>
+  </section>
+
 
       <div id="chart_div" style="width: 900px; height: 400px;"></div>
       </div>
@@ -243,6 +248,7 @@ table td.active
     $("#huha4").removeClass("active");
     $("#huha5").removeClass("active");
     $("#huha6").removeClass("active");
+    $("#huha7").removeClass("active");
 
 
     $("#registeruser_op").hide();
@@ -250,7 +256,9 @@ table td.active
     $("#veh_reg_op").hide();
     $("#add_sharing").hide();
     $("#find_sharing").hide();
-    $("#pending_requests").hide();    
+    $("#pending_requests_owner").hide();    
+    $("#pending_requests_requester").hide();    
+
    }
 
     $(document).ready(function(){
@@ -298,9 +306,16 @@ table td.active
 
     $("#huha6").click(function(){
     hideall();
-    $("#pending_requests").fadeIn();
+    $("#pending_requests_owner").fadeIn();
     $("#huha6").addClass("active");
-    window.location = "#pending_requests";
+    window.location = "#pending_requests_owner";
+    });
+
+    $("#huha7").click(function(){
+    hideall();
+    $("#pending_requests_requester").fadeIn();
+    $("#huha7").addClass("active");
+    window.location = "#pending_requests_requester";
     });
 
     });

@@ -7,7 +7,7 @@
 	include('mysqlconnect.php');
 	include('get_vehicle_id.php');
 
-	echo $_SESSION['Id'];
+	echo $_SESSION['Id'];	
 
 	$num = 6;
 	$next = $v_id +1;
@@ -20,7 +20,7 @@
 	$license_no = $_POST['license_no'];
 	$date_of_license = $_POST['date_of_license'];
 
-	mysql_query("INSERT INTO 11CS10059.Own_Vehicle (`Vehicle_Type`, `Year_of_Purchase`, `Sitting_Capacity`, `Owner`, `License_No`, `Date_of_License` , `Id`) VALUES ('".$vehicle_type."','".$yofp."','".$sitting_capacity."','".$owner."','".$license_no."','".$date_of_license."','".$v_id."')");
+	mysql_query("INSERT INTO 11CS10059.Own_Vehicle (`Vehicle_Type`, `Year_of_Purchase`, `Sitting_Capacity`, `Owner`, `License_No`, `Date_of_License` , `Id` , `Affinity`) VALUES ('".$vehicle_type."','".$yofp."','".$sitting_capacity."','".$owner."','".$license_no."','".$date_of_license."','".$v_id."','S')");
 	mysql_query("INSERT INTO 11CS10059.Own_Vehicle_Relation (`Vehicle_Id` , `Owner_Id`) VALUES ('".$v_id."','".$_SESSION['Id']."')");
 
 	header('Location: /dbms/Car_Pool/');

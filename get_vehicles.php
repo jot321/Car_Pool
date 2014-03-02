@@ -9,6 +9,7 @@
 	$v_t = array();
 	$s_t = array();
 	$owner = array();
+	$affinity = array();
 
 	$count = 0;
 
@@ -25,10 +26,8 @@
 			array_push($v_t, $row_sub['Vehicle_Type']);
 			array_push($s_t, $row_sub['Sitting_Capacity']);
 			array_push($owner, $row_sub['Owner']);
+			array_push($affinity,$row_sub['Affinity']);
 
-			// $v_t = $row_sub['Vehicle_Type'];
-			// $s_t = $row_sub['Sitting_Capacity'];
-			// $owner = $row_sub['Owner'];
 		}
 
 		array_push($tmparr, $row['Vehicle_Id']);
@@ -36,31 +35,41 @@
 
   	echo '<h3>Vehicles You have Registered.</h3>';
   	echo '<table  id="courses" width="90%" align="middle" class="result"><tbody>';	
-  	echo '<tr><td><b>Vehicle Id</b></td><td><b>Vehicle Type</td><td><b>Sitting Capacity</td><td><b>Owner</td></tr>';
+  	echo '<tr><td><b>Vehicle Id</b></td><td><b>Vehicle Type</td><td><b>Sitting Capacity</td><td><b>Owner</td><td><b>Self/Hired</td></tr>';
 
   	while($count < count($tmparr)){
 
 	 echo '<tr><td> '.$tmparr[$count].'</td>';
 	 echo '<td>'.$v_t[$count].'</td>';
 	 echo '<td>'.$s_t[$count].'</td>';
-	 echo '<td>'.$owner[$count].'</td></tr>';
+	 echo '<td>'.$owner[$count].'</td>';
+	 echo '<td>';
+
+	if($affinity[$count] == "S")
+	 	echo 'Self';
+	if($affinity[$count] == "H")
+		echo 'Hired';
+	 echo '</td></tr>';
 
 	 $count = $count + 1;
 
 	}
+
 	echo '</table>';
+	echo '<h4>Enter Your Preferred Vehicles from above :</h4>';
+	echo '<table  id="courses" width="90%" align="middle" class="result">';
 	echo '<form action = "vehicle_selected_for_sharing.php" method = "post" name="form1">';
-	echo '<input type = "text" name = "selected_vehicle" placeholder = "Enter Vehicle Id:"></input><br>
-			<input type = "text" name = "no_of_passengers" placeholder = "No of Passengers:"></input><br>
-			<input type = "text" name = "cost" placeholder = "Cost:"></input><br>	
-			<input type = "text" name = "source" placeholder = "Source:"></input><br>
-			<input type = "text" name = "dest" placeholder = "Destination:"></input><br>
-			<input type = "text" name = "start" placeholder = "Start Time:"></input><br>
-			<input type = "text" name = "arrival" placeholder = "Arrival Time:"></input><br>
-			<input type = "text" name = "date" placeholder = "Date of Travel:"></input><br>
+	echo '<tr><td>Enter Vehicle Id:</td><td><input type = "text" name = "selected_vehicle" placeholder = ""></input></td></tr>
+			<tr><td>No of Passengers:</td><td><input type = "text" name = "no_of_passengers" placeholder = ""></input></td></tr>
+			<tr><td>Cost:</td><td><input type = "text" name = "cost" placeholder = ""></input></td></tr>	
+			<tr><td>Source:</td><td><input type = "text" name = "source" placeholder = ""></input></td></tr>
+			<tr><td>Destination:</td><td><input type = "text" name = "dest" placeholder = ""></input></td></tr>
+			<tr><td>Start Time:</td><td><input type = "text" name = "start" placeholder = ""></input></td></tr>
+			<tr><td>Arrival Time:</td><td><input type = "text" name = "arrival" placeholder = ""></input></td></tr>
+			<tr><td>Date of Travel:</td><td><input type = "text" name = "date" placeholder = ""></input></td></tr>
 
 			';
-	echo '<button type="submit" class="btn btn-default">Go</button>';
+	echo '<tr><td><button type="submit" class="btn btn-default">Go</button></td><td></td></tr></table>';
 	echo '</form>';
     
 

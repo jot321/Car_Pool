@@ -12,11 +12,11 @@
 
 	echo '<h4>Notifications : Requests Granted</h4>';
 	echo '<table  id="courses" width="90%" align="middle" class="result table-striped">';
-	echo '<tr><td>Owner Id</td><td>Name</td><td>Contact No.</td><td>No of Passengers</td><td></td></tr>';
+	echo '<tr><td>Owner Id</td><td>Name</td><td>Contact No.</td><td>No of Passengers</td><td>Message You Sent</td></tr>';
 
 	while($row_2 = mysql_fetch_array($result_2)){
 
-		$query_sub_2 = "SELECT `Name`,`Mobile` FROM `11CS10059`.`Person` WHERE `Id` = ".$row['Owner_Id'];
+		$query_sub_2 = "SELECT * FROM `11CS10059`.`Person` WHERE `Id` = ".$row_2['Owner_Id'];
 		$interim_result_2 = mysql_query($query_sub_2);
 
 		while($row_sub_2 = mysql_fetch_array($interim_result_2)){
@@ -24,14 +24,14 @@
 			$mobile_2 = $row_sub_2['Mobile'];
 		}
 
-		echo '<tr><td>'.$row_2['Owner_Id'].'</td><td>'.$name_req_2.'</td><td>'.$mobile_2.'</td><td>'.$row_2['no_of_passengers'].'</td></tr>';
+		echo '<tr><td>'.$row_2['Owner_Id'].'</td><td>'.$name_req_2.'</td><td>'.$mobile_2.'</td><td>'.$row_2['no_of_passengers'].'</td><td>'.$row_2['Message'].'</td></tr>';
 	}
 
 	echo '</table>';
 
 	echo '<h4>Notifications : Your Pending Requests</h4>';
 	echo '<table  id="courses" width="90%" align="middle" class="result table-striped">';
-	echo '<tr><td>Owner Id</td><td>Name</td><td>Contact No.</td><td>No of Passengers</td><td></td></tr>';
+	echo '<tr><td>Owner Id</td><td>Name</td><td>Contact No.</td><td>No of Passengers</td><td>Message You Sent</td></tr>';
 
 	while($row = mysql_fetch_array($result)){
 
@@ -43,7 +43,7 @@
 			$mobile = $row_sub['Mobile'];
 		}
 
-		echo '<tr><td>'.$row['Owner_Id'].'</td><td>'.$name_req.'</td><td>'.$mobile.'</td><td>'.$row['no_of_passengers'].'</td></tr>';
+		echo '<tr><td>'.$row['Owner_Id'].'</td><td>'.$name_req.'</td><td>'.$mobile.'</td><td>'.$row['no_of_passengers'].'</td><td>'.$row['Message'].'</td></tr>';
 	}
 
 	echo '</table>';

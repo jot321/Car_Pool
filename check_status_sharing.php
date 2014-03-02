@@ -23,9 +23,6 @@
 
 	                    $("#click"+i).click(function(){
 								
-	                    	// console.log(temp1);
-	                    	// console.log(temp2);
-
 	                          $.ajax({
 	                              type:"post",
 	                              url:"grant_access.php",
@@ -60,7 +57,7 @@
 
 	echo '<h4>Notifications : People who have requested a seat with you</h4>';
 	echo '<table  id="courses" width="90%" align="middle" class="result table-striped">';
-	echo '<tr><td>Requester Id</td><td>Name</td><td>Contact No.</td><td>No of Passengers</td><td></td></tr>';
+	echo '<tr><td>Requester Id</td><td>Name</td><td>Contact No.</td><td>No of Passengers</td><td>Message from the Requester</td><td></td></tr>';
 
 	while($row = mysql_fetch_array($result)){
 
@@ -73,7 +70,7 @@
 		}
 
 
-		echo '<tr><td>'.$row['Requester_Id'].'</td><td>'.$name_req.'</td><td>'.$mobile.'</td><td>'.$row['no_of_passengers'].'</td><td><input type="button" value="Grant" id="click'.$count.'" class="btn btn-default"></input></td></tr>';
+		echo '<tr><td>'.$row['Requester_Id'].'</td><td>'.$name_req.'</td><td>'.$mobile.'</td><td>'.$row['no_of_passengers'].'</td><td>'.$row['Message'].'</td><td><input type="button" value="Grant" id="click'.$count.'" class="btn btn-default"></input></td></tr>';
 
 		array_push($_SESSION['arr_req_id'], $row['Requester_Id']);
 		array_push($_SESSION['arr_no_p'], $row['no_of_passengers']);

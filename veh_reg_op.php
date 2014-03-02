@@ -27,12 +27,10 @@
 	<form action = "vehicle_registration_hired.php" method = "post" onsubmit="return validateForm4()" name="form4">
 	      <table  id="courses" width="90%" align="middle" class="result"><tbody>
 		  
-		  <tr><td> Name: </td>  <td> <input type="text" name="name"></td></tr> 
-		  <tr><td> Email: </td>  <td> <input type="text" name="email"></td></tr>
-		  <tr><td> Address: </td>  <td> <input type="text" name="add"></td></tr>
-		  <tr><td> Phone No: </td>  <td> <input type="text" name="phone"></td></tr>
-		  <tr><td> Password: </td>  <td> <input type="password" name="pass1"></td></tr>
-		  <tr><td> Confirm Password: </td>  <td> <input type="password" name="pass2"></td></tr>
+		  <tr><td> Travel Agency Name: </td>  <td> <input type="text" name="t_name"></td></tr> 
+		  <tr><td> Travel Agency Address: </td>  <td> <input type="text" name="t_add"></td></tr>
+		  <tr><td> Vehicle Type: </td>  <td> <input type="text" name="t_v_t"></td></tr>
+		  <tr><td> Sitting Capacity: </td>  <td> <input type="text" name="t_s_c"></td></tr>
 	      </table>
 	      <button type="submit" class="btn btn-default">Register</button>
 	</form>	  

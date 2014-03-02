@@ -138,6 +138,7 @@ table td.active
         <?php if(!isset($_SESSION['Name'])) echo '
       	   <li onclick="" id="huha2"><a href="#registeruser_op"><i class="icon-chevron-right"></i>User Register</a></li>';
         ?>
+        
         <?php if(isset($_SESSION['Name'])) echo '
       	   <li onclick="" id="huha3"><a href="#veh_reg_op"><i class="icon-chevron-right" ></i>Vehicle Registeration</a></li>';
          ?>
@@ -152,6 +153,9 @@ table td.active
          ?>
          <?php if(isset($_SESSION['Name'])) echo '
          <li onclick="" id = "huha7"><a href="#pending_requests_requester"><i class="icon-chevron-right"></i>Pending Requests (Requests) </a></li>';
+         ?>
+         <?php if(isset($_SESSION['Name'])) echo '
+         <li onclick="" id = "huha8"><a href="#open_request"><i class="icon-chevron-right"></i>Open Requests </a></li>';
          ?>
 
        	</ul>
@@ -202,6 +206,10 @@ table td.active
     <?php include 'check_status_sharing_requester.php';?>
   </section>
 
+  <section id="open_request">
+    <?php include 'open_request.php';?>
+  </section>
+
 
       <div id="chart_div" style="width: 900px; height: 400px;"></div>
       </div>
@@ -249,6 +257,7 @@ table td.active
     $("#huha5").removeClass("active");
     $("#huha6").removeClass("active");
     $("#huha7").removeClass("active");
+    $("#huha8").removeClass("active");
 
 
     $("#registeruser_op").hide();
@@ -258,6 +267,7 @@ table td.active
     $("#find_sharing").hide();
     $("#pending_requests_owner").hide();    
     $("#pending_requests_requester").hide();    
+    $("#open_request").hide();
 
    }
 
@@ -316,6 +326,13 @@ table td.active
     $("#pending_requests_requester").fadeIn();
     $("#huha7").addClass("active");
     window.location = "#pending_requests_requester";
+    });
+
+    $("#huha8").click(function(){
+    hideall();
+    $("#open_request").fadeIn();
+    $("#huha8").addClass("active");
+    window.location = "#open_request";
     });
 
     });

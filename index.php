@@ -106,7 +106,7 @@ table td.active
       <div class="span3" id="nav_menu">
 	<ul class="nav nav-list bs-docs-sidenav affix-top" >
 	  
-	  <li style="margin-bottom:20px">
+	  <li style="margin-bottom:5px">
 	    <div style="width:258px; text-align:center; margin-top:30px">	  											  
 	      
 	      <b class="element select large" id="cur_date" name="cur_date"
@@ -156,6 +156,9 @@ table td.active
          ?>
          <?php if(isset($_SESSION['Name'])) echo '
          <li onclick="" id = "huha8"><a href="#open_request"><i class="icon-chevron-right"></i>Open Requests </a></li>';
+         ?>
+         <?php if(isset($_SESSION['Name'])) echo '
+         <li onclick="" id = "huha9"><a href="#search_requester"><i class="icon-chevron-right"></i>Search Requester </a></li>';
          ?>
 
        	</ul>
@@ -210,8 +213,11 @@ table td.active
     <?php include 'open_request.php';?>
   </section>
 
+  <section id="search_requester">
+    <?php include 'search_open_request.php';?>
+  </section>
 
-      <div id="chart_div" style="width: 900px; height: 400px;"></div>
+        <div id="chart_div" style="width: 900px; height: 400px;"></div>
       </div>
       
     </div>
@@ -258,6 +264,7 @@ table td.active
     $("#huha6").removeClass("active");
     $("#huha7").removeClass("active");
     $("#huha8").removeClass("active");
+    $("#huha9").removeClass("active");
 
 
     $("#registeruser_op").hide();
@@ -268,6 +275,7 @@ table td.active
     $("#pending_requests_owner").hide();    
     $("#pending_requests_requester").hide();    
     $("#open_request").hide();
+    $("#search_requester").hide();
 
    }
 
@@ -333,6 +341,13 @@ table td.active
     $("#open_request").fadeIn();
     $("#huha8").addClass("active");
     window.location = "#open_request";
+    });
+
+    $("#huha9").click(function(){
+    hideall();
+    $("#search_requester").fadeIn();
+    $("#huha9").addClass("active");
+    window.location = "#search_requester";
     });
 
     });

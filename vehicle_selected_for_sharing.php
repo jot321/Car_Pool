@@ -19,7 +19,7 @@
 	$f = $_POST['arrival'];
 	$g = $_POST['date'];
 
-	mysql_query("INSERT INTO 11CS10059.Sharing (`Id`, `selected_vehicle_id`, `no_of_passengers`, `cost`,`source`, `dest` , `start` , `arrival` , `Owner_Id` , `date`) VALUES ('".$s_id."','".$ve_id."','".$a."','".$b."','".$c."','".$d."','".$e."','".$f."','".$_SESSION['Id']."','".$g."')");
+	mysql_query("INSERT INTO 11CS10059.Sharing (`Id`, `selected_vehicle_id`, `no_of_passengers`, `cost`,`source`, `dest` , `start` , `arrival` , `Owner_Id` , `date` ,`initial_passengers`) VALUES ('".$s_id."','".$ve_id."','".$a."','".$b."','".$c."','".$d."','".$e."','".$f."','".$_SESSION['Id']."','".$g."','".$a."')");
 
 	header('Location: /dbms/Car_Pool/');
 

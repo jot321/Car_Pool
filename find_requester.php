@@ -16,13 +16,22 @@
 
 	$result_last = mysql_query($query);
 
+	echo '<h4>These people posted an Open Message</h4>';
 	echo '<table  id="courses" width="90%" align="middle" class="result table-striped">';
-	echo '<tr><td>Name</td><td>Picking Point</td><td>Destination Point</td></tr>';
+	echo '<tr><td>Name</td><td>Contact No.</td><td>Date Posted</td><td>Picking Point</td><td>Destination Point</td></tr>';
 	while($row = mysql_fetch_array($result_last)){
+
+		$query_sub = "SELECT `Name`,`Mobile` FROM `11CS10059`.`Person` WHERE `Id` = ".$row['Id'];
+		$interim_result = mysql_query($query_sub);
+
+		while($row_sub = mysql_fetch_array($interim_result)){
+			$name_owner = $row_sub['Name'];
+			$mobile_owner = $row_sub['Mobile'];
+		}
 
 		$d = $row['dest_point'];
 		if($d == $dest or $d == $inter1 or $d == $inter2 or $d == $inter3 or $d ==$inter4){
-			echo '<tr><td></td><td>'.$row['picking_point'].'</td><td>'.$d.'</td></tr>';
+			echo '<tr><td>'.$name_owner.'</td><td>'.$mobile_owner.'</td><td>'.$row['date'].'</td><td>'.$row['picking_point'].'</td><td>'.$d.'</td></tr>';
 		}
 	}
 

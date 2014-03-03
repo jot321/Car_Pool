@@ -57,7 +57,7 @@
 
 	echo '<h4>Notifications : People who have requested a seat with you</h4>';
 	echo '<table  id="courses" width="90%" align="middle" class="result table-striped">';
-	echo '<tr><td>Requester Id</td><td>Name</td><td>Contact No.</td><td>No of Passengers</td><td>Message from the Requester</td><td></td></tr>';
+	echo '<tr><td>Requester Id</td><td>Name</td><td>Contact No.</td><td>No of Passengers</td><td>Message from the Requester</td></tr>';
 
 	while($row = mysql_fetch_array($result)){
 
@@ -70,7 +70,7 @@
 		}
 
 
-		echo '<tr><td>'.$row['Requester_Id'].'</td><td>'.$name_req.'</td><td>'.$mobile.'</td><td>'.$row['no_of_passengers'].'</td><td>'.$row['Message'].'</td><td><input type="button" value="Grant" id="click'.$count.'" class="btn btn-default"></input></td></tr>';
+		echo '<tr><td>'.$row['Requester_Id'].'</td><td>'.$name_req.'</td><td>'.$mobile.'</td><td>'.$row['no_of_passengers'].'</td><td>'.$row['Message'].'</td></tr>';
 
 		array_push($_SESSION['arr_req_id'], $row['Requester_Id']);
 		array_push($_SESSION['arr_no_p'], $row['no_of_passengers']);
@@ -79,9 +79,11 @@
 
 	echo '</table>';
 
+	echo '<h4>Enter the Requesters Id you want to grant a seat</h4>';
 	echo '<form action = "grant_access.php" method = "post" name="form1">
-		<input type = "text" placeholder = "Enter the Requester Id" name = "requester"></input>
-		<input type = "submit" class = "btn btn-default" value = "Go"></input>
+		  <table  id="courses" width="90%" align="middle" class="result table-striped">
+		<tr><td><input type = "text" placeholder = "Enter the Requester Id" name = "requester"></input></td>
+		<td><input type = "submit" class = "btn btn-default" value = "Go"></input></td></tr></table>
 	</form>';
 
 	$_SESSION['count'] = $count;

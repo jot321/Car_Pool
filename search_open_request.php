@@ -13,12 +13,6 @@
                           var inter3 = $("#inter3").val();
                           var inter4 = $("#inter4").val();
 
-                          console.log(inter1);
-                          console.log(inter2);
-                          console.log(inter3);
-                          console.log(inter4);
-
-
                           if(inter1 == "") inter1 = "0";
                           if(inter2 == "") inter2 = "0";
                           if(inter3 == "") inter3 = "0";
@@ -44,7 +38,11 @@
 <?php
 
 
+echo '<h3>All Open Messages</h3>';
+
+
 	echo '<h3>Find a Requester </h3>';
+  
 	echo '<h5>Enter Source and Destination</h5>';
 	echo '
 		  <table  id="courses" width="90%" align="middle" class="result table-striped">

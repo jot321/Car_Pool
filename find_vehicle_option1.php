@@ -2,7 +2,7 @@
 	
 	include('mysqlconnect.php');
 	session_start();
-	ini_set('display_errors', 'On');
+	ini_set('display_errors', 'Off');
 	error_reporting(E_ALL);	
 
 
@@ -14,7 +14,7 @@
 	$result = mysql_query($query);
 
 	echo '<table  id="courses" width="90%" align="middle" class="result table-striped"><tbody>';
-	echo '<tr><td><b>Sharing Id</td><td><b>Owner</td><td><b>Contact No.</td><td><b>Vehicle Id</td><td><b>Vehicle</td><td><b>Sitting Capacity</td></tr>';
+	echo '<tr><td><b>Sharing Id</td><td><b>Owner</td><td><b>Contact No.</td><td><b>Vehicle Id</td><td><b>Vehicle</td><td><b>Sitting Capacity</td><td><b>Inital Seats</td><td><b>Seats Left</td><td><b>Cost</td></tr>';
 
 	while($row = mysql_fetch_array($result)){
 
@@ -35,7 +35,9 @@
 			$s_c = $row_sub['Sitting_Capacity'];
 		}
 
-		echo '<tr><td>'.$row['Id'].'</td><td>'.$name_owner.'</td><td>'.$mobile_owner.'</td><td>'.$row['selected_vehicle_id'].'</td><td>'.$v_t.'</td><td>'.$s_c.'</td></tr>';
+		$a = $row['initial_passengers'];
+		$x = $row['cost'] / $a;
+		echo '<tr><td>'.$row['Id'].'</td><td>'.$name_owner.'</td><td>'.$mobile_owner.'</td><td>'.$row['selected_vehicle_id'].'</td><td>'.$v_t.'</td><td>'.$s_c.'</td><td>'.$row['initial_passengers'].'</td><td>'.$row['no_of_passengers'].'</td><td>'.floor($x).'</td></tr>';
 	}
 
 	echo '</table><br>';

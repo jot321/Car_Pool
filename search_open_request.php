@@ -41,8 +41,25 @@
 echo '<h3>All Open Messages</h3>';
 
 
-	echo '<h3>Find a Requester </h3>';
-  
+	echo '<h4>Find a Requester </h4>';
+
+  $query = "SELECT * from `11CS10059`.`open_message`";
+  $result = mysql_query($query);
+
+    echo '<table  id="courses" width="90%" align="middle" class="result table-striped">
+    <tr><td>Id</td><td>Picking Point</td><td>Destination Point</td><td>Date</td></tr>';
+
+
+  while($row = mysql_fetch_array($result)){
+
+    echo '<tr><td>'.$row['Id'].'</td><td>'.$row['picking_point'].'</td><td>'.$row['dest_point'].'</td><td>'.$row['date'].'</td></tr>';
+
+  }
+  echo '<tr><td><input type = "text" name = "jot" value = "" ></input></td><td></td></tr>';
+  echo '</table>';
+
+
+
 	echo '<h5>Enter Source and Destination</h5>';
 	echo '
 		  <table  id="courses" width="90%" align="middle" class="result table-striped">
